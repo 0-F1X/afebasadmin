@@ -1,0 +1,60 @@
+.gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fccb90;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ff7f7f,  #ff9999 , #ff4d4d , rgb(218, 50, 50));
+}
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+} 
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Scrollbar pour Chrome, Safari et Edge */
+        ::-webkit-scrollbar {
+            width: 12px; /* Largeur de la scrollbar */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888; /* Couleur de la scrollbar */
+            border-radius: 10px; /* Arrondir les bords */
+            border: 2px solid #555; /* Bordure pour séparer la scrollbar du contenu */
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Couleur de la piste de la scrollbar */
+        }
+
+        /* Scrollbar pour Firefox */
+        * {
+            scrollbar-width: thin; /* Épaisseur de la scrollbar */
+            scrollbar-color: #888 #f1f1f1; /* Couleur de la scrollbar et de la piste */
+        }
+
+        /* Exemple de div défilant */
+        .scrollable {
+            height: 200px;
+            width: 300px;
+            overflow-y: scroll;
+            border: 1px solid #ccc;
+        }
+
+        .content {
+            height: 600px; /* Contenu plus grand pour activer le défilement */
+        }
