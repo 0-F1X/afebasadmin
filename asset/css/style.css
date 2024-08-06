@@ -58,3 +58,22 @@ body {
         .content {
             height: 600px; /* Contenu plus grand pour activer le défilement */
         }
+
+a { 
+ text-decoration: none;
+}
+
+.btn-gradient {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(45deg,#ff7f7f,  #ff9999 , #ff4d4d);
+    transition:  linear 3s all ease-in-out;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(45deg,  #ff4d4d, #ff7f7f,  #ff9999);
+    transition: linear 3s all ease-in-out;
+}
