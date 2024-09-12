@@ -48,7 +48,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="./resulandmatch.html" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="resulandmatch.html" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-futbol"></i>
                     <span> Résultats des Matchs</span>
@@ -56,7 +56,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="./calendrier.html" data-toggle="collapse" data-target="#collapseUtilities"
+                <a class="nav-link collapsed" href="calendrier.html" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Calendrier des Matchs</span>
@@ -123,89 +123,78 @@
                 </nav>
 
                 <div class="container">
-                    <div class="form-container">
-                        <h2>Résultats de Match</h2>
-                        <form action="#" method="post">
-                            <div class="form-group">
-                                <label for="match-date"><i class="fas fa-calendar-alt"></i> Date du Match</label>
-                                <input type="date" id="match-date" name="match_date" required>
-                            </div>
-    
-                            <div class="form-group">
-                                <label for="match-team"><i class="fas fa-users"></i> Match</label>
-                                <input type="text" id="match-team" name="match_team" required>
-                            </div>
-    
-                            <div class="form-group">
-                                <label for="match-points"><i class="fas fa-trophy"></i> Points</label>
-                                <input type="number" id="match-points" name="match_points" placeholder="Ex: 3 - 2" required>
-                            </div>
-    
-                            <div class="form-group">
-                                <label for="match-score"><i class="fas fa-futbol"></i> Score</label>
-                                <input type="text" id="match-score" name="match_score" placeholder="Ex: 12 - 10" required>
-                            </div>
-    
-                            <div class="form-group">
-                                <label for="region"><i class="fas fa-map-marker-alt"></i> Région</label>
-                                <select id="region" name="region" required>
-                                    <option value="" disabled selected>Choisir une région</option>
-                                    <option value="madagascar">Madagascar</option>
-                                    <option value="la-reunion">La Réunion</option>
-                                </select>
-                            </div>
-    
-                            <div class="form-group">
-                                <input type="submit" value="Ajouter Résultat">
-                            </div>
-                        </form>
-                    </div>
-                    <!-- Séparateur -->
-                <div class="separator"></div>
-
-                <!-- Formulaire Matchs à Venir -->
-                <div class="form-container">
-                    <h2>Matchs à Venir</h2>
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label for="upcoming-match-date"><i class="fas fa-calendar-alt"></i> Date du Match</label>
-                            <input type="date" id="upcoming-match-date" name="upcoming_match_date" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="upcoming-match-team"><i class="fas fa-users"></i> Match</label>
-                            <input type="text" id="upcoming-match-team" name="upcoming_match_team"
-                                placeholder="Ex: Madagascar vs La Réunion" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="upcoming-match-time"><i class="fas fa-clock"></i> Heure</label>
-                            <input type="time" id="upcoming-match-time" name="upcoming_match_time" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="upcoming-match-location"><i class="fas fa-map-marker-alt"></i> Lieu</label>
-                            <input type="text" id="upcoming-match-location" name="upcoming_match_location"
-                                placeholder="Ex: Stade Mahamasina" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="upcoming-region"><i class="fas fa-map"></i> Région</label>
-                            <select id="upcoming-region" name="upcoming_region" required>
-                                <option value="" disabled selected>Choisir une région</option>
-                                <option value="madagascar">Madagascar</option>
-                                <option value="la-reunion">La Réunion</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <input type="submit" value="Ajouter Match">
-                        </div>
+                    <h2>Gestion des Équipes</h2>
+                    <form>
+                      <!-- Nom de l'équipe -->
+                      <div class="mb-3">
+                        <label for="teamName" class="form-label">Nom de l'équipe</label>
+                        <input type="text" class="form-control" id="teamName" placeholder="Ex: Équipe X">
+                      </div>
+                  
+                      <!-- Capitaine de l'équipe -->
+                      <div class="mb-3">
+                        <label for="teamCaptain" class="form-label">Capitaine de l'équipe</label>
+                        <input type="text" class="form-control" id="teamCaptain" placeholder="Ex: Jean Dupont">
+                      </div>
+                  
+                      <!-- Nombre de joueurs -->
+                      <div class="mb-3">
+                        <label for="playerCount" class="form-label">Nombre de joueurs</label>
+                        <input type="number" class="form-control" id="playerCount" min="1" value="5">
+                      </div>
+                  
+                      <!-- Statistiques -->
+                      <div class="mb-3">
+                        <label for="teamWins" class="form-label">Victoires</label>
+                        <input type="number" class="form-control" id="teamWins" min="0" value="0">
+                      </div>
+                  
+                      <div class="mb-3">
+                        <label for="teamLosses" class="form-label">Défaites</label>
+                        <input type="number" class="form-control" id="teamLosses" min="0" value="0">
+                      </div>
+                  
+                      <!-- Bouton d'enregistrement -->
+                      <button type="submit" class="btn btn-primary">Enregistrer l'équipe</button>
                     </form>
-                </div>
-                </div>
-                
-            </div>
+                  </div>
+
+                  <div class="container mt-5">
+                    <h3>Liste des Équipes</h3>
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nom de l'équipe</th>
+                          <th scope="col">Capitaine</th>
+                          <th scope="col">Joueurs</th>
+                          <th scope="col">Victoires</th>
+                          <th scope="col">Défaites</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- Exemples de rangées -->
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Équipe A</td>
+                          <td>Jean Dupont</td>
+                          <td>5</td>
+                          <td>10</td>
+                          <td>3</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Équipe B</td>
+                          <td>Marie Martin</td>
+                          <td>6</td>
+                          <td>8</td>
+                          <td>5</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  
+                  
 
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
