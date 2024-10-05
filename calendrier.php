@@ -123,91 +123,89 @@
                 <div class="container">
                     <div class="form-container">
                         <h2>Ajouter un Match</h2>
-                        <form action="#" method=""">
-                        <div class=" mb-3">
-                            <label for="matchDate" class="form-label">Date du match</label>
-                            <input type="date" class="form-control" id="matchDate">
+                        <form action="./server/trait-match.php" method="post">
+                            <div class="mb-3">
+                                <label for="matchDate" class="form-label">Date du match</label>
+                                <input type="date" class="form-control" id="matchDate" name="matchDate" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="matchName" class="form-label">Match</label>
+                                <input type="text" class="form-control" id="matchName" name="matchName"
+                                    placeholder="Ex: Match 1 ou Match 2" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="matchTime" class="form-label">Heure du match</label>
+                                <input type="time" class="form-control" id="matchTime" name="matchTime" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="matchLocation" class="form-label">Lieu du match</label>
+                                <input type="text" class="form-control" id="matchLocation" name="matchLocation"
+                                    placeholder="Ex: Salle de Billard A" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="region" class="form-label">Région</label>
+                                <select id="region" name="region" class="form-control" required>
+                                    <option value="" disabled selected>Choisir une région</option>
+                                    <option value="madagascar">Madagascar</option>
+                                    <option value="la-reunion">La Réunion</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Enregistrer le match</button>
+                        </form>
+
                     </div>
 
-                    <!-- Nom du match -->
-                    <div class="mb-3">
-                        <label for="matchName" class="form-label">Match</label>
-                        <input type="text" class="form-control" id="matchName" placeholder="Ex: Match 1 ou Match 2">
+                    <!-- Séparateur -->
+                    <div class="separator"></div>
+
+                    <!-- Formulaire Matchs à Venir -->
+                    <div class="form-container my-4">
+                        <h2 class="text-center">Matchs à Venir</h2>
+                        <table class="table table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Match</th>
+                                    <th>Heure</th>
+                                    <th>Lieu</th>
+                                    <th>Région</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2024-10-07</td>
+                                    <td>Équipe A vs Équipe B</td>
+                                    <td>14:00</td>
+                                    <td>Stade de Billard A</td>
+                                    <td>Région</td>
+                                    <td><button type="button" class="btn btn-danger">Terminer</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
-                    <!-- Heure du match -->
-                    <div class="mb-3">
-                        <label for="matchTime" class="form-label">Heure du match</label>
-                        <input type="time" class="form-control" id="matchTime">
-                    </div>
-
-                    <!-- Lieu du match -->
-                    <div class="mb-3">
-                        <label for="matchLocation" class="form-label">Lieu du match</label>
-                        <input type="text" class="form-control" id="matchLocation" placeholder="Ex: Salle de Billard A">
-                    </div>
-
-                    <!-- Region -->
-                    <div class="mb-3">
-                        <label for="Location" class="form-label">Region</label>
-                        <select id="region" name="region" required>
-                            <option value="" disabled selected>Choisir une région</option>
-                            <option value="madagascar">Madagascar</option>
-                            <option value="la-reunion">La Réunion</option>
-                        </select>
-                    </div>
-
-                    <!-- Bouton d'enregistrement -->
-                    <button type="submit" class="btn btn-primary">Enregistrer le match</button>
-                    </form>
                 </div>
 
-                <!-- Séparateur -->
-                <div class="separator"></div>
-
-                <!-- Formulaire Matchs à Venir -->
-                <div class="form-container my-4">
-                    <h2 class="text-center">Matchs à Venir</h2>
-                    <table class="table table-striped table-bordered">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Date</th>
-                                <th>Match</th>
-                                <th>Heure</th>
-                                <th>Lieu</th>
-                                <th>Région</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2024-10-07</td>
-                                <td>Équipe A vs Équipe B</td>
-                                <td>14:00</td>
-                                <td>Stade de Billard A</td>
-                                <td>Région</td>
-                                <td><button type="button" class="btn btn-danger">Terminer</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
 
             </div>
-
-
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; AFEBAS ADMIN By Impulse Digital Experience Agency</span>
+                    </div>
+                </div>
+            </footer>
         </div>
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; AFEBAS ADMIN By Impulse Digital Experience Agency</span>
-                </div>
-            </div>
-        </footer>
-    </div>
 
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
     </div>
 
