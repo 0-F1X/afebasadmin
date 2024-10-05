@@ -50,20 +50,20 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="./resulandmatch.php">
-                    <i class="fas fa-football"></i>
+                    <i class="fas fa-futbol"></i>
                     <span>Resulats des Matchs</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="./calendrier.html" >
+                <a class="nav-link collapsed" href="./calendrier.html">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Calendrier des Matchs</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" >
+                <a class="nav-link collapsed" href="#">
                     <i class="fas fa-trophy"></i>
                     <span>Classement</span>
                 </a>
@@ -147,6 +147,16 @@
                         <input type="text" class="form-control" id="matchLocation" placeholder="Ex: Salle de Billard A">
                     </div>
 
+                    <!-- Region -->
+                    <div class="mb-3">
+                        <label for="Location" class="form-label">Region</label>
+                        <select id="region" name="region" required>
+                            <option value="" disabled selected>Choisir une région</option>
+                            <option value="madagascar">Madagascar</option>
+                            <option value="la-reunion">La Réunion</option>
+                        </select>
+                    </div>
+
                     <!-- Bouton d'enregistrement -->
                     <button type="submit" class="btn btn-primary">Enregistrer le match</button>
                     </form>
@@ -165,6 +175,7 @@
                                 <th>Match</th>
                                 <th>Heure</th>
                                 <th>Lieu</th>
+                                <th>Région</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -174,6 +185,7 @@
                                 <td>Équipe A vs Équipe B</td>
                                 <td>14:00</td>
                                 <td>Stade de Billard A</td>
+                                <td>Région</td>
                                 <td><button type="button" class="btn btn-danger">Terminer</button></td>
                             </tr>
                         </tbody>
@@ -182,7 +194,7 @@
 
             </div>
 
-            
+
         </div>
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
