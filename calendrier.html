@@ -13,6 +13,7 @@
     <link rel="shortcut icon" href="./asset/images/Logo.png" type="image/x-icon">
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./asset/css/style2.css">
     <link rel="stylesheet" href="./asset/css/style3.css">
     <link rel="stylesheet" href="./asset/css/dash.css">
@@ -48,7 +49,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="resulandmatch.html" data-toggle="collapse" data-target="#collapseTwo"
+                <a class="nav-link collapsed" href="resulandmatch.php" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-futbol"></i>
                     <span> Résultats des Matchs</span>
@@ -56,8 +57,8 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="calendrier.html" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="calendrier.html" data-toggle="collapse"
+                    data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Calendrier des Matchs</span>
                 </a>
@@ -123,59 +124,65 @@
                 </nav>
 
                 <div class="container">
-                    <form>
-                        <!-- Nom du match -->
-                        <div class="mb-3">
-                          <label for="matchName" class="form-label">Nom du match</label>
-                          <input type="text" class="form-control" id="matchName" placeholder="Ex: Tournoi Régional">
-                        </div>
-                      
-                        <!-- Date du match -->
-                        <div class="mb-3">
-                          <label for="matchDate" class="form-label">Date du match</label>
-                          <input type="date" class="form-control" id="matchDate">
-                        </div>
-                      
-                        <!-- Heure du match -->
-                        <div class="mb-3">
-                          <label for="matchTime" class="form-label">Heure du match</label>
-                          <input type="time" class="form-control" id="matchTime">
-                        </div>
-                      
-                        <!-- Lieu du match -->
-                        <div class="mb-3">
-                          <label for="matchLocation" class="form-label">Lieu du match</label>
-                          <input type="text" class="form-control" id="matchLocation" placeholder="Ex: Stade National">
-                        </div>
-                      
-                        <!-- Participants -->
-                        <div class="mb-3">
-                          <label for="participants" class="form-label">Participants</label>
-                          <input type="text" class="form-control" id="participants" placeholder="Joueur A vs Joueur B">
-                        </div>
+                    <div class="form-container">
+                        <h2>Ajouter un Match</h2>
+                        <form action="#" method=""">
+                        <div class=" mb-3">
+                            <label for="matchDate" class="form-label">Date du match</label>
+                            <input type="date" class="form-control" id="matchDate">
+                    </div>
 
-                        <!-- Participants -->
-                        <div class="mb-3">
-                            <label for="region" class="form-label">Région</label>
-                            <input type="text" class="form-control" id="region" placeholder="MDG ou Reunion">
-                          </div>
-                      
-                        <!-- Statut du match -->
-                        <div class="mb-3">
-                          <label for="matchStatus" class="form-label">Statut du match</label>
-                          <select class="form-select" id="matchStatus">
-                            <option value="scheduled">Programmé</option>
-                            <option value="postponed">Reporté</option>
-                            <option value="canceled">Annulé</option>
-                          </select>
-                        </div>
-                      
-                        <!-- Bouton d'enregistrement -->
-                        <button type="submit" class="btn btn-primary">Enregistrer le match</button>
-                      </form>
-                      
+                    <!-- Nom du match -->
+                    <div class="mb-3">
+                        <label for="matchName" class="form-label">Match</label>
+                        <input type="text" class="form-control" id="matchName" placeholder="Ex: Match 1 ou Match 2">
+                    </div>
+
+                    <!-- Heure du match -->
+                    <div class="mb-3">
+                        <label for="matchTime" class="form-label">Heure du match</label>
+                        <input type="time" class="form-control" id="matchTime">
+                    </div>
+
+                    <!-- Lieu du match -->
+                    <div class="mb-3">
+                        <label for="matchLocation" class="form-label">Lieu du match</label>
+                        <input type="text" class="form-control" id="matchLocation" placeholder="Ex: Salle de Billard A">
+                    </div>
+
+                    <!-- Bouton d'enregistrement -->
+                    <button type="submit" class="btn btn-primary">Enregistrer le match</button>
+                    </form>
                 </div>
-                
+
+                <!-- Séparateur -->
+                <div class="separator"></div>
+
+                <!-- Formulaire Matchs à Venir -->
+                <div class="form-container my-4">
+                    <h2 class="text-center">Matchs à Venir</h2>
+                    <table class="table table-striped table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Date</th>
+                                <th>Match</th>
+                                <th>Heure</th>
+                                <th>Lieu</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-10-07</td>
+                                <td>Équipe A vs Équipe B</td>
+                                <td>14:00</td>
+                                <td>Stade de Billard A</td>
+                                <td><button type="button" class="btn btn-danger">Terminer</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
 
             <footer class="sticky-footer bg-white">
@@ -196,6 +203,9 @@
 
 
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/sb-admin-2.min.js"></script>

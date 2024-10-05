@@ -130,22 +130,22 @@
                                 <label for="match-date"><i class="fas fa-calendar-alt"></i> Date du Match</label>
                                 <input type="date" id="match-date" name="match_date" required>
                             </div>
-    
+
                             <div class="form-group">
                                 <label for="match-team"><i class="fas fa-users"></i> Match</label>
                                 <input type="text" id="match-team" name="match_team" required>
                             </div>
-    
+
                             <div class="form-group">
                                 <label for="match-points"><i class="fas fa-trophy"></i> Points</label>
                                 <input type="number" id="match-points" name="match_points" placeholder="Ex: 3 - 2" required>
                             </div>
-    
+
                             <div class="form-group">
                                 <label for="match-score"><i class="fas fa-futbol"></i> Score</label>
                                 <input type="text" id="match-score" name="match_score" placeholder="Ex: 12 - 10" required>
                             </div>
-    
+
                             <div class="form-group">
                                 <label for="region"><i class="fas fa-map-marker-alt"></i> Région</label>
                                 <select id="region" name="region" required>
@@ -154,57 +154,59 @@
                                     <option value="la-reunion">La Réunion</option>
                                 </select>
                             </div>
-    
+
                             <div class="form-group">
                                 <input type="submit" value="Ajouter Résultat">
                             </div>
                         </form>
+
+
                     </div>
                     <!-- Séparateur -->
-                <div class="separator"></div>
+                    <div class="separator"></div>
 
-                <!-- Formulaire Matchs à Venir -->
-                <div class="form-container">
-                    <h2>Matchs à Venir</h2>
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label for="upcoming-match-date"><i class="fas fa-calendar-alt"></i> Date du Match</label>
-                            <input type="date" id="upcoming-match-date" name="upcoming_match_date" required>
-                        </div>
+                    <!-- Formulaire Matchs à Venir -->
+                    <div class="form-container">
+                        <h2>Matchs à Venir</h2>
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label for="upcoming-match-date"><i class="fas fa-calendar-alt"></i> Date du Match</label>
+                                <input type="date" id="upcoming-match-date" name="upcoming_match_date" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="upcoming-match-team"><i class="fas fa-users"></i> Match</label>
-                            <input type="text" id="upcoming-match-team" name="upcoming_match_team"
-                                placeholder="Ex: Madagascar vs La Réunion" required>
-                        </div>
+                            <div class="form-group">
+                                <label for="upcoming-match-team"><i class="fas fa-users"></i> Match</label>
+                                <input type="text" id="upcoming-match-team" name="upcoming_match_team"
+                                    placeholder="Ex: Madagascar vs La Réunion" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="upcoming-match-time"><i class="fas fa-clock"></i> Heure</label>
-                            <input type="time" id="upcoming-match-time" name="upcoming_match_time" required>
-                        </div>
+                            <div class="form-group">
+                                <label for="upcoming-match-time"><i class="fas fa-clock"></i> Heure</label>
+                                <input type="time" id="upcoming-match-time" name="upcoming_match_time" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="upcoming-match-location"><i class="fas fa-map-marker-alt"></i> Lieu</label>
-                            <input type="text" id="upcoming-match-location" name="upcoming_match_location"
-                                placeholder="Ex: Stade Mahamasina" required>
-                        </div>
+                            <div class="form-group">
+                                <label for="upcoming-match-location"><i class="fas fa-map-marker-alt"></i> Lieu</label>
+                                <input type="text" id="upcoming-match-location" name="upcoming_match_location"
+                                    placeholder="Ex: Stade Mahamasina" required>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="upcoming-region"><i class="fas fa-map"></i> Région</label>
-                            <select id="upcoming-region" name="upcoming_region" required>
-                                <option value="" disabled selected>Choisir une région</option>
-                                <option value="madagascar">Madagascar</option>
-                                <option value="la-reunion">La Réunion</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="upcoming-region"><i class="fas fa-map"></i> Région</label>
+                                <select id="upcoming-region" name="upcoming_region" required>
+                                    <option value="" disabled selected>Choisir une région</option>
+                                    <option value="madagascar">Madagascar</option>
+                                    <option value="la-reunion">La Réunion</option>
+                                </select>
+                            </div>
 
-                        <div class="form-group">
-                            <input type="submit" value="Ajouter Match">
-                        </div>
-                    </form>
+                            <div class="form-group">
+                                <input type="submit" value="Ajouter Match">
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                </div>
-                
+
             </div>
 
             <footer class="sticky-footer bg-white">
