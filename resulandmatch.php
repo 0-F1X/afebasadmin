@@ -48,24 +48,21 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="./resulandmatch.html" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="./resulandmatch.php">
                     <i class="fas fa-futbol"></i>
                     <span> Résultats des Matchs</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="./calendrier.html" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="./calendrier.html">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Calendrier des Matchs</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilitie"
-                    aria-expanded="true" aria-controls="collapseUtilitie">
+                <a class="nav-link collapsed" href="#">
                     <i class="fas fa-trophy"></i>
                     <span>Classement</span>
                 </a>
@@ -166,44 +163,30 @@
                     <div class="separator"></div>
 
                     <!-- Formulaire Matchs à Venir -->
-                    <div class="form-container">
-                        <h2>Matchs à Venir</h2>
-                        <form action="#" method="post">
-                            <div class="form-group">
-                                <label for="upcoming-match-date"><i class="fas fa-calendar-alt"></i> Date du Match</label>
-                                <input type="date" id="upcoming-match-date" name="upcoming_match_date" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="upcoming-match-team"><i class="fas fa-users"></i> Match</label>
-                                <input type="text" id="upcoming-match-team" name="upcoming_match_team"
-                                    placeholder="Ex: Madagascar vs La Réunion" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="upcoming-match-time"><i class="fas fa-clock"></i> Heure</label>
-                                <input type="time" id="upcoming-match-time" name="upcoming_match_time" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="upcoming-match-location"><i class="fas fa-map-marker-alt"></i> Lieu</label>
-                                <input type="text" id="upcoming-match-location" name="upcoming_match_location"
-                                    placeholder="Ex: Stade Mahamasina" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="upcoming-region"><i class="fas fa-map"></i> Région</label>
-                                <select id="upcoming-region" name="upcoming_region" required>
-                                    <option value="" disabled selected>Choisir une région</option>
-                                    <option value="madagascar">Madagascar</option>
-                                    <option value="la-reunion">La Réunion</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="submit" value="Ajouter Match">
-                            </div>
-                        </form>
+                    <div class="form-container my-4">
+                        <h2 class="text-center">AFFICHAGE</h2>
+                        <table class="table table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Match</th>
+                                    <th>Points</th>
+                                    <th>Score</th>
+                                    <th>Région</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2024-10-07</td>
+                                    <td>Équipe A vs Équipe B</td>
+                                    <td>10-05</td>
+                                    <td>05-03</td>
+                                    <td>
+                                        Mada ou La Reunion
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
