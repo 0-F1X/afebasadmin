@@ -186,6 +186,17 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
+                            <style>
+                                .end {
+                                    text-decoration: none;
+                                    color: white;
+                                }
+
+                                .end:hover {
+                                    text-decoration: none;
+                                    color: white;
+                                }
+                            </style>
                             <tbody>
                                 <?php foreach ($matches as $match): ?>
                                     <tr>
@@ -194,7 +205,11 @@
                                         <td><?= htmlspecialchars($match['match_time']); ?></td>
                                         <td><?= htmlspecialchars($match['match_location']); ?></td>
                                         <td><?= htmlspecialchars($match['region']); ?></td>
-                                        <td><button type="button" class="btn btn-danger">Terminer</button></td>
+                                        <td>
+                                            <button class="btn btn-danger">
+                                                <a href="resulandmatch.php?date=<?= urlencode($match['match_date']); ?>&team=<?= urlencode($match['match_name']); ?>&region=<?= urlencode($match['region']); ?>" class="end">Terminer</a>
+                                            </button>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

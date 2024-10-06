@@ -62,7 +62,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="./classement.html">
                     <i class="fas fa-trophy"></i>
                     <span>Classement</span>
                 </a>
@@ -119,87 +119,98 @@
                     </form>
                 </nav>
 
+                <?php
+                // Récupérer les données envoyées via l'URL
+                $match_date = isset($_GET['date']) ? htmlspecialchars($_GET['date']) : '';
+                $match_team = isset($_GET['team']) ? htmlspecialchars($_GET['team']) : '';
+                $region = isset($_GET['region']) ? htmlspecialchars($_GET['region']) : '';
+                ?>
+
                 <div class="container">
-                    <div class="form-container">
-                        <h2>Résultats de Match</h2>
-                        <form method="post">
-                            <div class="form-group">
-                                <label for="match-date"><i class="fas fa-calendar-alt"></i> Date du Match</label>
-                                <input type="date" id="match-date" name="match_date" required>
+                    <div class="row">
+                        <!-- Résultats de Match -->
+                        <div class="col-md-6">
+                            <div class="form-container">
+                                <h2>Résultats de Match</h2>
+                                <form method="post">
+                                    <div class="form-group">
+                                        <label for="match-date"><i class="fas fa-calendar-alt"></i> Date du Match</label>
+                                        <input type="date" id="match-date" name="match_date" value="<?= $match_date ?>" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="match-team"><i class="fas fa-users"></i> Match</label>
+                                        <input type="text" id="match-team" name="match_team" value="<?= $match_team ?>" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="match-points"><i class="fas fa-trophy"></i> Points</label>
+                                        <input type="number" id="match-points" name="match_points" placeholder="Ex: 3 - 2" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="match-score"><i class="fas fa-futbol"></i> Score</label>
+                                        <input type="text" id="match-score" name="match_score" placeholder="Ex: 12 - 10" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="region"><i class="fas fa-map-marker-alt"></i> Région</label>
+                                        <select id="region" name="region" required>
+                                            <option value="" disabled <?= empty($region) ? 'selected' : '' ?>>Choisir une région</option>
+                                            <option value="madagascar" <?= $region == 'madagascar' ? 'selected' : '' ?>>Madagascar</option>
+                                            <option value="la-reunion" <?= $region == 'la-reunion' ? 'selected' : '' ?>>La Réunion</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="submit" value="Ajouter Résultat">
+                                    </div>
+                                </form>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <label for="match-team"><i class="fas fa-users"></i> Match</label>
-                                <input type="text" id="match-team" name="match_team" required>
+
+                        <!-- Affichage des résultats -->
+                        <div class="col-md-6">
+                            <div class="form-container my-4">
+                                <h2 class="text-center">AFFICHAGE</h2>
+                                <table class="table table-striped table-bordered">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Match</th>
+                                            <th>Points</th>
+                                            <th>Score</th>
+                                            <th>Région</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2024-10-07</td>
+                                            <td>Équipe A vs Équipe B</td>
+                                            <td>10-05</td>
+                                            <td>05-03</td>
+                                            <td>Mada ou La Reunion</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-
-                            <div class="form-group">
-                                <label for="match-points"><i class="fas fa-trophy"></i> Points</label>
-                                <input type="number" id="match-points" name="match_points" placeholder="Ex: 3 - 2" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="match-score"><i class="fas fa-futbol"></i> Score</label>
-                                <input type="text" id="match-score" name="match_score" placeholder="Ex: 12 - 10" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="region"><i class="fas fa-map-marker-alt"></i> Région</label>
-                                <select id="region" name="region" required>
-                                    <option value="" disabled selected>Choisir une région</option>
-                                    <option value="madagascar">Madagascar</option>
-                                    <option value="la-reunion">La Réunion</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <input type="submit" value="Ajouter Résultat">
-                            </div>
-                        </form>
-
-
-                    </div>
-                    <!-- Séparateur -->
-                    <div class="separator"></div>
-
-                    <!-- Formulaire Matchs à Venir -->
-                    <div class="form-container my-4">
-                        <h2 class="text-center">AFFICHAGE</h2>
-                        <table class="table table-striped table-bordered">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Match</th>
-                                    <th>Points</th>
-                                    <th>Score</th>
-                                    <th>Région</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>2024-10-07</td>
-                                    <td>Équipe A vs Équipe B</td>
-                                    <td>10-05</td>
-                                    <td>05-03</td>
-                                    <td>
-                                        Mada ou La Reunion
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        </div>
                     </div>
                 </div>
-
             </div>
-
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; AFEBAS ADMIN By Impulse Digital Experience Agency</span>
-                    </div>
-                </div>
-            </footer>
         </div>
+
+    </div>
+
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; AFEBAS ADMIN By Impulse Digital Experience Agency</span>
+            </div>
+        </div>
+    </footer>
+    </div>
     </div>
 
     <a class="scroll-to-top rounded" href="#page-top">
