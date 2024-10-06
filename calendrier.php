@@ -42,7 +42,7 @@
                 Action
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="./equipe.html">
                     <i class="fas fa-futbol"></i>
                     <span> EQUIPE</span>
                 </a>
@@ -56,14 +56,14 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="./calendrier.html">
+                <a class="nav-link collapsed" href="./calendrier.php">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Calendrier des Matchs</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="./classement.html">
                     <i class="fas fa-trophy"></i>
                     <span>Classement</span>
                 </a>

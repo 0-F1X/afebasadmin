@@ -41,7 +41,7 @@
                 Action
             </div>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="./equipe.html">
                     <i class="fas fa-futbol"></i>
                     <span> EQUIPE</span>
                 </a>
