@@ -72,7 +72,7 @@
                                         dédiée aux administrateurs de l'association, leur offrant un accès exclusif à
                                         des outils et des ressources essentielles pour la gestion et la coordination des
                                         activités.</p> <br>
-                                    <button type="button"> <a href="./resulandmatch.html">
+                                    <button type="button"> <a href="./resulandmatch.php">
                                             <i class="fas fa-sign-in-alt"></i> Visiter le Dashboard Brouillon
                                         </a>
                                     </button>
