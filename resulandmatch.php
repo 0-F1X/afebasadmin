@@ -55,7 +55,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="./calendrier.html">
+                <a class="nav-link collapsed" href="./calendrier.php">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Calendrier des Matchs</span>
                 </a>
@@ -122,7 +122,7 @@
                 <div class="container">
                     <div class="form-container">
                         <h2>Résultats de Match</h2>
-                        <form action="#" method="post">
+                        <form method="post">
                             <div class="form-group">
                                 <label for="match-date"><i class="fas fa-calendar-alt"></i> Date du Match</label>
                                 <input type="date" id="match-date" name="match_date" required>

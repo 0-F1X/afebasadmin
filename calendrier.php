@@ -163,6 +163,15 @@
                     <!-- Séparateur -->
                     <div class="separator"></div>
 
+                    <?php
+                    // Inclure le fichier de connexion à la base de données
+                    require './server/db.php';
+
+                    // Requête pour récupérer tous les matchs
+                    $stmt = $pdo->query("SELECT * FROM matches");
+                    $matches = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    ?>
+
                     <!-- Formulaire Matchs à Venir -->
                     <div class="form-container my-4">
                         <h2 class="text-center">Matchs à Venir</h2>
@@ -178,18 +187,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>2024-10-07</td>
-                                    <td>Équipe A vs Équipe B</td>
-                                    <td>14:00</td>
-                                    <td>Stade de Billard A</td>
-                                    <td>Région</td>
-                                    <td><button type="button" class="btn btn-danger">Terminer</button></td>
-                                </tr>
+                                <?php foreach ($matches as $match): ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($match['match_date']); ?></td>
+                                        <td><?= htmlspecialchars($match['match_name']); ?></td>
+                                        <td><?= htmlspecialchars($match['match_time']); ?></td>
+                                        <td><?= htmlspecialchars($match['match_location']); ?></td>
+                                        <td><?= htmlspecialchars($match['region']); ?></td>
+                                        <td><button type="button" class="btn btn-danger">Terminer</button></td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
-
                 </div>
 
 

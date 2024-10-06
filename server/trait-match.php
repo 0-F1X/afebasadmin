@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute([$matchDate, $matchName, $matchTime, $matchLocation, $region])) {
         echo "Match ajouté avec succès.";
         // Redirection ou message de succès
-        header("Location: resulandmatch.php");
+        header("Location: ../calendrier.php");
         exit();
     } else {
         echo "Erreur lors de l'ajout du match.";
