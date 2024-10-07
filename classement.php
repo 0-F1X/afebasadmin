@@ -1,3 +1,8 @@
+<?php
+require_once 'server/trait-two-classement.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -237,7 +242,8 @@
                             }
                         </style>
 
-                        <!-- Section classements Madagascar et La Réunion -->
+
+
                         <div class="classements-container">
                             <!-- Classement Madagascar -->
                             <div class="classement-madagascar">
@@ -254,15 +260,15 @@
                                     <tbody>
                                         <!-- Affichage des 5 premiers joueurs du classement Madagascar -->
                                         <?php
-                                        // Inclure les données des joueurs (par exemple, extrait de la base de données)
-                                        foreach ($classementMadagascar as $index => $joueur) {
+                                        // Assurez-vous que cette variable correspond à celle que vous avez définie lors de la récupération des données
+                                        foreach ($classement_mada as $index => $joueur) {
                                             if ($index < 5) {
                                                 echo "<tr>
-                                                        <td>" . ($index + 1) . "</td>
-                                                        <td>" . $joueur['tournament'] . "</td>
-                                                        <td>" . $joueur['name'] . "</td>
-                                                        <td>" . $joueur['points_mada'] . "</td>
-                                                    </tr>";
+                                <td>" . ($index + 1) . "</td>
+                                <td>" . $joueur['tournoi'] . "</td>
+                                <td>" . $joueur['nom_prenom'] . "</td>
+                                <td>" . $joueur['points'] . "</td>
+                            </tr>";
                                             }
                                         }
                                         ?>
@@ -285,14 +291,14 @@
                                     <tbody>
                                         <!-- Affichage des 5 premiers joueurs du classement La Réunion -->
                                         <?php
-                                        foreach ($classementReunion as $index => $joueur) {
+                                        foreach ($classement_reunion as $index => $joueur) {
                                             if ($index < 5) {
                                                 echo "<tr>
-                                                            <td>" . ($index + 1) . "</td>
-                                                            <td>" . $joueur['tournament'] . "</td>
-                                                            <td>" . $joueur['name'] . "</td>
-                                                            <td>" . $joueur['points_reunion'] . "</td>
-                                                        </tr>";
+                                <td>" . ($index + 1) . "</td>
+                                <td>" . $joueur['tournoi'] . "</td>
+                                <td>" . $joueur['nom_prenom'] . "</td>
+                                <td>" . $joueur['points'] . "</td>
+                            </tr>";
                                             }
                                         }
                                         ?>
@@ -301,13 +307,14 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
+
             </div>
         </div>
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+    </div>
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
     </div>
 
     <script src="vendor/jquery/jquery.min.js"></script>

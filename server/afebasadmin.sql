@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2024 at 01:09 PM
+-- Generation Time: Oct 07, 2024 at 09:22 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -20,6 +20,55 @@ SET time_zone = "+00:00";
 --
 -- Database: `afebasadmin`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `classement`
+--
+
+CREATE TABLE `classement` (
+  `id` int(11) NOT NULL,
+  `region` varchar(50) NOT NULL,
+  `tournoi` varchar(100) NOT NULL,
+  `nom_prenom` varchar(100) NOT NULL,
+  `points` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `classement`
+--
+
+INSERT INTO `classement` (`id`, `region`, `tournoi`, `nom_prenom`, `points`) VALUES
+(1, 'madagascar', 'National', 'ANDRIAMPENOMANANA Fiderana', 10),
+(2, 'la-reunion', 'National', 'Mialy Andio', 5),
+(3, 'madagascar', 'National', 'Marco Razafindrakoto', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `classement_madagascar`
+--
+
+CREATE TABLE `classement_madagascar` (
+  `id` int(11) NOT NULL,
+  `tournament` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `points_mada` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `classement_reunion`
+--
+
+CREATE TABLE `classement_reunion` (
+  `id` int(11) NOT NULL,
+  `tournament` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `points_reunion` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -71,6 +120,24 @@ INSERT INTO `matches` (`id`, `match_date`, `match_name`, `match_time`, `match_lo
 --
 
 --
+-- Indexes for table `classement`
+--
+ALTER TABLE `classement`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `classement_madagascar`
+--
+ALTER TABLE `classement_madagascar`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `classement_reunion`
+--
+ALTER TABLE `classement_reunion`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `infosuser`
 --
 ALTER TABLE `infosuser`
@@ -85,6 +152,24 @@ ALTER TABLE `matches`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `classement`
+--
+ALTER TABLE `classement`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `classement_madagascar`
+--
+ALTER TABLE `classement_madagascar`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `classement_reunion`
+--
+ALTER TABLE `classement_reunion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `infosuser`
