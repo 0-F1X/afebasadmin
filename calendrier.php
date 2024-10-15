@@ -63,7 +63,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="./classement.html">
+                <a class="nav-link collapsed" href="./classement.php">
                     <i class="fas fa-trophy"></i>
                     <span>Classement</span>
                 </a>
