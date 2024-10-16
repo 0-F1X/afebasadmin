@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2024 at 09:22 PM
+-- Generation Time: Oct 16, 2024 at 07:25 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -115,6 +115,30 @@ INSERT INTO `matches` (`id`, `match_date`, `match_name`, `match_time`, `match_lo
 (2, '2024-10-27', '2', '15:19:00', 'Salle de Billard A', 'madagascar'),
 (3, '2024-11-25', '4', '11:24:00', 'Salle de Billard B', 'la-reunion');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `produits`
+--
+
+CREATE TABLE `produits` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `prix` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `produits`
+--
+
+INSERT INTO `produits` (`id`, `nom`, `description`, `image`, `prix`) VALUES
+(2, 'Billard', 'Boule de Billard', '670fe88b9e7bb_Capture.PNG', 100000.00),
+(5, 'Table', 'Table de Billard', '670ff1e6b5115_8.png', 250000.00),
+(6, 'Pointe', 'Pointe de Baton', '670ff3456dc69_12.png', 20000.00),
+(7, 'Triangle', 'Triangle pour le baton', '670ff42aa6dbd_13.png', 50000.00);
+
 --
 -- Indexes for dumped tables
 --
@@ -150,6 +174,12 @@ ALTER TABLE `matches`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `produits`
+--
+ALTER TABLE `produits`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -182,6 +212,12 @@ ALTER TABLE `infosuser`
 --
 ALTER TABLE `matches`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `produits`
+--
+ALTER TABLE `produits`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

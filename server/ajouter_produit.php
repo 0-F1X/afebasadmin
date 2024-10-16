@@ -3,11 +3,11 @@
 
 // Inclure la connexion à la base de données
 require_once 'db.php'; // Assurez-vous que le chemin est correct
-// fichier : ajouter_produit.php
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nom = $_POST['nom'];
     $description = $_POST['description'];
-    $prix = $_POST['prix']; // N'oubliez pas d'ajouter ceci si vous l'avez ajouté à votre formulaire
+    $prix = $_POST['prix']; // Prix ajouté au traitement
 
     // Vérifiez si un fichier a été téléchargé
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
@@ -27,9 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ':nom' => $nom,
                     ':description' => $description,
                     ':prix' => $prix,
-                    ':image' => $imageName // Utiliser le nom de fichier généré
+                    ':image' => $imageName
                 ]);
-                echo "Produit ajouté avec succès.";
+
+                // Redirection après l'ajout réussi
+                header("Location: ../ecommerce.php?success=1");
+                exit();
             } catch (PDOException $e) {
                 echo "Erreur lors de l'ajout du produit : " . $e->getMessage();
             }
@@ -40,3 +43,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Aucun fichier d'image téléchargé ou erreur lors du téléchargement.";
     }
 }
+?>
