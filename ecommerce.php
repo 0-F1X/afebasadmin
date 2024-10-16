@@ -124,6 +124,10 @@
                                     <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3">
+                                    <label for="prix" class="form-label">Prix du produit</label>
+                                    <input type="number" class="form-control" id="prix" name="prix" step="0.01" required>
+                                </div>
+                                <div class="mb-3">
                                     <label for="image" class="form-label">Image</label>
                                     <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
                                 </div>
@@ -148,6 +152,7 @@
                                     <tr>
                                         <th>Nom</th>
                                         <th>Description</th>
+                                        <th>Prix</th>
                                         <th>Image</th>
                                         <th>Action</th>
                                     </tr>
@@ -157,8 +162,11 @@
                                         <tr>
                                             <td><?php echo htmlspecialchars($produit['nom']); ?></td>
                                             <td><?php echo htmlspecialchars($produit['description']); ?></td>
+                                            <td><?php echo htmlspecialchars($produit['prix']); ?> Ar</td>
                                             <td><img src="<?php echo htmlspecialchars($produit['image']); ?>" alt="<?php echo htmlspecialchars($produit['nom']); ?>" width="50"></td>
-                                            <td><button class="btn btn-danger">Supprimer</button></td>
+                                            <td>
+                                                <button class="btn btn-danger" onclick="confirmDeletion(<?php echo $produit['id']; ?>)">Supprimer</button>
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
@@ -177,10 +185,31 @@
             </footer>
         </div>
 
+        <script>
+            // Fonction de confirmation avec SweetAlert
+            function confirmDeletion(id) {
+                Swal.fire({
+                    title: 'Êtes-vous sûr de vouloir supprimer ce produit ?',
+                    text: "Cette action est irréversible !",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Oui, supprimer !',
+                    cancelButtonText: 'Annuler'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Si l'utilisateur confirme, redirection vers le script de suppression
+                        window.location.href = "./server/supprimer_produit.php?id=" + id;
+                    }
+                });
+            }
+        </script>
         <!-- Scripts -->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="js/sb-admin-2.min.js"></script>
 
 </body>
