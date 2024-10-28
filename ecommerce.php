@@ -130,6 +130,7 @@
                                 <div class="mb-3">
                                     <label for="image" class="form-label">Image</label>
                                     <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+                                    <small class="form-text text-muted">Taille recommandée : 517 x 436 pixels.</small>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Ajouter le produit</button>
                             </form>

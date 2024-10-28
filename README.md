@@ -1,1 +1,2 @@
-Demonstration du site ADMIN de l'AFEBAS Madagascar.
+Demonstration du site 08 POOL COEUR Madagascar.
++ le site vitrine. 

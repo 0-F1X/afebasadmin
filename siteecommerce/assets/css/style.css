@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #1977cc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #030303;
+  text-decoration: none;
+}
+
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f1f7fd;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: gray;
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #FD7E14;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+
+/* Styles pour la barre de recherche */
+.search-bar-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar-wrapper {
+  position: relative;
+  width: 50%;
+  /* Ajustez le pourcentage pour définir la largeur relative de la barre de recherche */
+  max-width: 500px;
+  /* Ajustez cette valeur pour définir une largeur maximale */
+}
+
+.search-bar {
+  width: 100%;
+  /* Ajustez la largeur de la barre de recherche par rapport à la largeur de .search-bar-wrapper */
+  padding: 10px 30px;
+  /* Ajustez l'espacement à l'intérieur de la barre */
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+  border-color: #4caf50;
+  /* Changer la couleur de la bordure au focus */
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.search-icon i {
+  font-size: 16px;
+}
+
+/* Conteneur principal contenant le header et la barre de recherche */
+.header-search-container {
+  display: flex;
+  /* Utilise flexbox pour l'agencement */
+  justify-content: space-between;
+  /* Répartit les éléments à gauche et à droite */
+  align-items: center;
+  /* Aligne les éléments verticalement au centre */
+  margin-bottom: 20px;
+  /* Ajoute un espace entre la section header-search et les autres éléments */
+}
+
+/* Styles pour le header */
+.section-header {
+  flex: 1;
+  /* Prend toute la largeur restante */
+  text-align: left;
+  /* Aligne le texte à gauche */
+}
+
+/* Styles pour la barre de recherche */
+.search-bar-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  /* Aligne la barre de recherche à droite */
+  align-items: center;
+  /* Aligne les éléments verticalement */
+}
+
+.search-bar-wrapper {
+  position: relative;
+  width: 80%;
+  /* Ajustez cette valeur selon vos besoins */
+  max-width: 300px;
+  /* Définissez une largeur maximale */
+}
+
+.search-bar {
+  width: 100%;
+  /* Ajustez la largeur de la barre de recherche selon vos besoins */
+  padding: 10px 30px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.search-bar:focus {
+  border-color: #4caf50;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.search-icon i {
+  font-size: 16px;
+}
