@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2024 at 07:25 PM
+-- Generation Time: Oct 28, 2024 at 07:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -134,10 +134,11 @@ CREATE TABLE `produits` (
 --
 
 INSERT INTO `produits` (`id`, `nom`, `description`, `image`, `prix`) VALUES
-(2, 'Billard', 'Boule de Billard', '670fe88b9e7bb_Capture.PNG', 100000.00),
 (5, 'Table', 'Table de Billard', '670ff1e6b5115_8.png', 250000.00),
 (6, 'Pointe', 'Pointe de Baton', '670ff3456dc69_12.png', 20000.00),
-(7, 'Triangle', 'Triangle pour le baton', '670ff42aa6dbd_13.png', 50000.00);
+(7, 'Triangle', 'Triangle pour le baton', '670ff42aa6dbd_13.png', 50000.00),
+(8, 'Materielles', 'AZAAEKSD Nffsksd', '671fcd9ca7c85_670ff42aa6dbd_13.png', 40000.00),
+(9, 'Vango', 'Azaeaz azrar', '671fce11ef3c1_670ff3456dc69_12.png', 30000.00);
 
 --
 -- Indexes for dumped tables
@@ -217,7 +218,7 @@ ALTER TABLE `matches`
 -- AUTO_INCREMENT for table `produits`
 --
 ALTER TABLE `produits`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
