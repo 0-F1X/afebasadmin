@@ -141,11 +141,41 @@
                 }
                 ?>
 
+                <style>
+                    .principal {
+                        display: flex;
+                        /* Utilisation de Flexbox pour aligner les enfants */
+                        justify-content: space-between;
+                        /* Espace entre les deux divs */
+                    }
 
-                <div class="container">
-                    <div class="row">
+                    .first,
+                    .second {
+                        flex: 1;
+                        /* Chaque div prend une part égale de l'espace disponible */
+                        margin: 10px;
+                        /* Marge pour espacer les divs */
+                    }
+
+                    .form-container {
+                        padding: 15px;
+                        /* Ajout de padding pour le contenu du formulaire */
+                        border: 1px solid #ccc;
+                        /* Bordure pour visualiser la div */
+                        border-radius: 5px;
+                        /* Coins arrondis */
+                    }
+
+                    .table {
+                        width: 100%;
+                        /* Largeur complète pour la table */
+                    }
+                </style>
+
+                <div>
+                    <div class="principal">
                         <!-- Résultats de Match -->
-                        <div class="col-md-6">
+                        <div class="first">
                             <div class="form-container">
                                 <h2>Résultats de Match</h2>
                                 <form method="post">
@@ -184,42 +214,37 @@
                                 </form>
                             </div>
                         </div>
+                        <!-- Affichage des résultats -->
+                        <div class="second">
+                            <h2 class="text-center">AFFICHAGE</h2>
+                            <table class="table table-striped table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Match</th>
+                                        <th>Points</th>
+                                        <th>Score</th>
+                                        <th>Région</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2024-10-07</td>
+                                        <td>Équipe A vs Équipe B</td>
+                                        <td>10-05</td>
+                                        <td>05-03</td>
+                                        <td>Mada ou La Reunion</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
 
 
-                <!-- Affichage des résultats -->
-                <div class="col-md-6">
-                    <div class="form-container my-4">
-                        <h2 class="text-center">AFFICHAGE</h2>
-                        <table class="table table-striped table-bordered">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Match</th>
-                                    <th>Points</th>
-                                    <th>Score</th>
-                                    <th>Région</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>2024-10-07</td>
-                                    <td>Équipe A vs Équipe B</td>
-                                    <td>10-05</td>
-                                    <td>05-03</td>
-                                    <td>Mada ou La Reunion</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
-    </div>
-
     </div>
 
     <footer class="sticky-footer bg-white">
