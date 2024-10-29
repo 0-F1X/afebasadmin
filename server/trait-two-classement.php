@@ -1,6 +1,6 @@
 <?php
  // Inclure le fichier de connexion à la base de données
- require_once 'server/db.php';
+ require_once 'db.php';
 
  // Récupérer le classement de Madagascar (5 premiers)
  $stmt_mada = $pdo->prepare("SELECT * FROM classement WHERE region = 'madagascar' ORDER BY points DESC LIMIT 5");

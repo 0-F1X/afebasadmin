@@ -1,3 +1,7 @@
+<?php
+require_once '../server/trait-two-classement.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -411,6 +415,7 @@
 
     <div id="Madagascar" class="tabcontent">
 
+
       <div class="calendar-container">
         <h2 class="details-title" id="calendar-title"> Madagascar <span class="arrow">&#9660;</span></h2>
         <div class="calendar details" id="calendar-details">
@@ -424,19 +429,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <!-- Ajoutez d'autres lignes pour plus de matchs à venir -->
+              <!-- Affichage des 5 premiers joueurs du classement Madagascar -->
+              <?php
+              // Assurez-vous que cette variable correspond à celle que vous avez définie lors de la récupération des données
+              foreach ($classement_mada as $index => $joueur) {
+                if ($index < 5) {
+                  echo "<tr>
+                                <td>" . ($index + 1) . "</td>
+                                <td>" . $joueur['tournoi'] . "</td>
+                                <td>" . $joueur['nom_prenom'] . "</td>
+                                <td>" . $joueur['points'] . "</td>
+                            </tr>";
+                }
+              }
+              ?>
             </tbody>
           </table>
         </div>
@@ -457,19 +463,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <!-- Ajoutez d'autres lignes pour plus de matchs à venir -->
+              <!-- Affichage des 5 premiers joueurs du classement La Réunion -->
+              <?php
+              foreach ($classement_reunion as $index => $joueur) {
+                if ($index < 5) {
+                  echo "<tr>
+                                <td>" . ($index + 1) . "</td>
+                                <td>" . $joueur['tournoi'] . "</td>
+                                <td>" . $joueur['nom_prenom'] . "</td>
+                                <td>" . $joueur['points'] . "</td>
+                            </tr>";
+                }
+              }
+              ?>
             </tbody>
           </table>
         </div>
