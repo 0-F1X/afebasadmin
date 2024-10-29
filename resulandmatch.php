@@ -228,13 +228,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>2024-10-07</td>
-                                        <td>Équipe A vs Équipe B</td>
-                                        <td>10-05</td>
-                                        <td>05-03</td>
-                                        <td>Mada ou La Reunion</td>
-                                    </tr>
+                                    <?php
+                                    // Récupérer les résultats de la base de données
+                                    $sql = "SELECT date_result, equipe, points, score, region FROM resultats";
+                                    $stmt = $pdo->query($sql);
+                                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                        echo "<tr>";
+                                        echo "<td>" . htmlspecialchars($row['date_result']) . "</td>";
+                                        echo "<td>" . htmlspecialchars($row['equipe']) . "</td>";
+                                        echo "<td>" . htmlspecialchars($row['points']) . "</td>";
+                                        echo "<td>" . htmlspecialchars($row['score']) . "</td>";
+                                        echo "<td>" . htmlspecialchars($row['region']) . "</td>";
+                                        echo "</tr>";
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
