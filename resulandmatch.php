@@ -98,53 +98,7 @@
             </div>
 
         </ul>
-<style>
-    .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Aligner les deux sections en haut */
-}
 
-.form-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table th, .table td {
-    padding: 10px;
-    text-align: left;
-}
-
-.table thead {
-    background-color: #f8f9fa;
-    color: #333;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: #f2f2f2;
-}
-
-.table-bordered {
-    border: 1px solid #ddd;
-}
-
-.table-bordered th, .table-bordered td {
-    border: 1px solid #ddd;
-}
-
-</style>
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -166,11 +120,27 @@
                 </nav>
 
                 <?php
-                // Récupérer les données envoyées via l'URL
-                $match_date = isset($_GET['date']) ? htmlspecialchars($_GET['date']) : '';
-                $match_team = isset($_GET['team']) ? htmlspecialchars($_GET['team']) : '';
-                $region = isset($_GET['region']) ? htmlspecialchars($_GET['region']) : '';
+                require_once './server/db.php';
+
+                // Initialisation des variables pour éviter les erreurs d'affichage
+                $match_date = isset($_POST['match_date']) ? htmlspecialchars($_POST['match_date']) : '';
+                $match_team = isset($_POST['match_team']) ? htmlspecialchars($_POST['match_team']) : '';
+                $region = isset($_POST['region']) ? htmlspecialchars($_POST['region']) : '';
+
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    // Récupérer les données du formulaire
+                    $date_result = $_POST['match_date'];
+                    $equipe = $_POST['match_team'];
+                    $points = $_POST['match_points'];
+                    $score = $_POST['match_score'];
+                    $region = $_POST['region'];
+
+                    // Insérer les données dans la table 'resultats'
+                    $stmt = $pdo->prepare("INSERT INTO resultats (date_result, equipe, points, score, region) VALUES (?, ?, ?, ?, ?)");
+                    $stmt->execute([$date_result, $equipe, $points, $score, $region]);
+                }
                 ?>
+
 
                 <div class="container">
                     <div class="row">
@@ -214,38 +184,41 @@
                                 </form>
                             </div>
                         </div>
+                    </div>
+                </div>
 
 
-                        <!-- Affichage des résultats -->
-                        <div class="col-md-6">
-                            <div class="form-container my-4">
-                                <h2 class="text-center">AFFICHAGE</h2>
-                                <table class="table table-striped table-bordered">
-                                    <thead class="thead-dark">
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Match</th>
-                                            <th>Points</th>
-                                            <th>Score</th>
-                                            <th>Région</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>2024-10-07</td>
-                                            <td>Équipe A vs Équipe B</td>
-                                            <td>10-05</td>
-                                            <td>05-03</td>
-                                            <td>Mada ou La Reunion</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+
+                <!-- Affichage des résultats -->
+                <div class="col-md-6">
+                    <div class="form-container my-4">
+                        <h2 class="text-center">AFFICHAGE</h2>
+                        <table class="table table-striped table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Match</th>
+                                    <th>Points</th>
+                                    <th>Score</th>
+                                    <th>Région</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2024-10-07</td>
+                                    <td>Équipe A vs Équipe B</td>
+                                    <td>10-05</td>
+                                    <td>05-03</td>
+                                    <td>Mada ou La Reunion</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
 
     </div>
 
