@@ -52,7 +52,7 @@ require_once '../server/trait-two-classement.php';
     <div class="container logo_menu">
       <div class="logo-menu-container">
         <!-- Logo -->
-        <a href="index.html" class="logo top">
+        <a href="index.php" class="logo top">
           <img src="assets/images/Sans titre-1.png" alt="Logo" style="width: 250px;top:-30px;position: relative;">
         </a>
         <div class="menu-phone">
@@ -65,7 +65,7 @@ require_once '../server/trait-two-classement.php';
           <nav class="main-nav top">
             <ul class="nav">
               <!-- Icone Accueil -->
-              <li><a href="index.html" class="active"><i class="fas fa-home"></i> Accueil</a></li>
+              <li><a href="index.php" class="active"><i class="fas fa-home"></i> Accueil</a></li>
 
               <!-- Informations Menu -->
               <li>
@@ -79,7 +79,7 @@ require_once '../server/trait-two-classement.php';
 
               <!-- Evènements Menu -->
               <li>
-                <a href="evenement.html"><i class="fas fa-calendar-alt"></i> Evènements</a>
+                <a href="evenement.php"><i class="fas fa-calendar-alt"></i> Evènements</a>
                 <ul class="dropdown">
                   <li><a href="info1.html">Info 1</a></li>
                   <li><a href="info2.html">Info 2</a></li>

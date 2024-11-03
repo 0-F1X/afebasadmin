@@ -1,3 +1,7 @@
+<?php
+require_once '../server/trait-two-classement.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +19,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -47,10 +51,10 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li><a href="index.html" class="active"><i class="fas fa-home"></i></a></li>
+                            <li><a href="index.php" class="active"><i class="fas fa-home"></i></a></li>
                             <li><a href="informations.html">Informations</a></li>
-                            <li><a href="evenement.html">Evènements</a></li>
-                            <li><a href="classement.html" class="exp">Classement</a></li>
+                            <li><a href="evenement.php">Evènements</a></li>
+                            <li><a href="classement.php" class="exp">Classement</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -101,18 +105,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <!-- Affichage des 5 premiers joueurs du classement Madagascar -->
+                        <?php
+                        // Assurez-vous que cette variable correspond à celle que vous avez définie lors de la récupération des données
+                        foreach ($classement_mada as $index => $joueur) {
+                            if ($index < 5) {
+                                echo "<tr>
+                                <td>" . ($index + 1) . "</td>
+                                <td>" . $joueur['tournoi'] . "</td>
+                                <td>" . $joueur['nom_prenom'] . "</td>
+                                <td>" . $joueur['points'] . "</td>
+                            </tr>";
+                            }
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -133,18 +139,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        <!-- Affichage des 5 premiers joueurs du classement La Réunion -->
+                        <?php
+                        foreach ($classement_reunion as $index => $joueur) {
+                            if ($index < 5) {
+                                echo "<tr>
+                                <td>" . ($index + 1) . "</td>
+                                <td>" . $joueur['tournoi'] . "</td>
+                                <td>" . $joueur['nom_prenom'] . "</td>
+                                <td>" . $joueur['points'] . "</td>
+                            </tr>";
+                            }
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -185,4 +192,5 @@
     </script>
 
 </body>
+
 </html>

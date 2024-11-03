@@ -1,3 +1,6 @@
+<?php
+require_once '../server/trait-two-classement.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +13,7 @@
     <title>Evènements</title>
 
     <!-- Bootstrap core CSS -->
+    <link rel="icon" type="image/png" href="assets/images/434984082_664231352458191_5826590618460124006_n - Copie.png">
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -57,10 +61,10 @@ https://templatemo.com/tm-589-lugx-gaming
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                    <ul class="nav">
-                      <li><a href="index.html" class="active"><i class="fas fa-home"></i></a></li>
+                      <li><a href="index.php" class="active"><i class="fas fa-home"></i></a></li>
                       <li> <a href="informations.html">Informations</a></li>
-                      <li><a href="evenement.html" class="exp">Evènements</a></li>
-                      <li><a href="classement.html">Classement</a></li>
+                      <li><a href="evenement.php" class="exp">Evènements</a></li>
+                      <li><a href="classement.php">Classement</a></li>
                      
                   </ul>   
                     <a class='menu-trigger'>
@@ -118,19 +122,19 @@ https://templatemo.com/tm-589-lugx-gaming
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>10/04/2024</td>
-              <td>Match 1</td>
-              <td>10 - 5</td>
-              <td>3 - 2</td>
-            </tr>
-            <tr>
-              <td>15/04/2024</td>
-              <td>Match 2</td>
-              <td>12 - 8</td>
-              <td>4 - 1</td>
-            </tr>
-            <!-- Ajoutez d'autres lignes pour plus de matchs -->
+            <?php
+            // Récupérer les résultats de la base de données
+            $sql = "SELECT date_result, equipe, points, score, region FROM resultats WHERE region = 'madagascar'";
+            $stmt = $pdo->query($sql);
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+              echo "<tr>";
+              echo "<td>" . htmlspecialchars($row['date_result']) . "</td>";
+              echo "<td>" . htmlspecialchars($row['equipe']) . "</td>";
+              echo "<td>" . htmlspecialchars($row['points']) . "</td>";
+              echo "<td>" . htmlspecialchars($row['score']) . "</td>";
+              echo "</tr>";
+            }
+            ?>
           </tbody>
         </table>
       </div>
@@ -140,29 +144,43 @@ https://templatemo.com/tm-589-lugx-gaming
       <h2 class="details-title" id="calendar-title">Calendrier des matchs à venir <span class="arrow">&#9660;</span></h2>
       <div class="calendar details" id="calendar-details">
         <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Match</th>
-              <th>Heure</th>
-              <th>Lieu</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>20/04/2024</td>
-              <td>Match 3</td>
-              <td>16:00</td>
-              <td>Salle de billard C</td>
-            </tr>
-            <tr>
-              <td>25/04/2024</td>
-              <td>Match 4</td>
-              <td>19:30</td>
-              <td>Salle de billard D</td>
-            </tr>
-            <!-- Ajoutez d'autres lignes pour plus de matchs à venir -->
-          </tbody>
+        <thead>
+              <tr>
+                <th>Date</th>
+                <th>Match</th>
+                <th>Heure</th>
+                <th>Lieu</th>
+                <th>region</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              require '../server/db.php';
+
+              // Requête pour récupérer uniquement les matchs de type 'réunion'
+              $stmt = $pdo->query("SELECT * FROM matches WHERE region = 'madagascar'");
+              $matches = $stmt->fetchAll(PDO::FETCH_ASSOC);
+              ?>
+              <?php foreach ($matches as $match): ?>
+                <tr>
+                  <td>
+                    <?= htmlspecialchars($match['match_date']); ?>
+                  </td>
+                  <td>
+                    <?= htmlspecialchars($match['match_name']); ?>
+                  </td>
+                  <td>
+                    <?= htmlspecialchars($match['match_time']); ?>
+                  </td>
+                  <td>
+                    <?= htmlspecialchars($match['match_location']); ?>
+                  </td>
+                  <td>
+                    <?= htmlspecialchars($match['region']); ?>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
         </table>
       </div>
     </div>
@@ -176,29 +194,29 @@ https://templatemo.com/tm-589-lugx-gaming
       <h2 class="details-title" id="matches-title">Résultats des matchs <span class="arrow">&#9660;</span></h2>
       <div class="matches details" id="matches-details">
         <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Match</th>
-              <th>Points</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>10/04/2024</td>
-              <td>Match 1</td>
-              <td>10 - 5</td>
-              <td>3 - 2</td>
-            </tr>
-            <tr>
-              <td>15/04/2024</td>
-              <td>Match 2</td>
-              <td>12 - 8</td>
-              <td>4 - 1</td>
-            </tr>
-            <!-- Ajoutez d'autres lignes pour plus de matchs -->
-          </tbody>
+        <thead>
+              <tr>
+                <th>Date</th>
+                <th>Match</th>
+                <th>Points</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              // Récupérer les résultats de la base de données
+              $sql = "SELECT date_result, equipe, points, score, region FROM resultats WHERE region = 'reunion'";
+              $stmt = $pdo->query($sql);
+              while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($row['date_result']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['equipe']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['points']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['score']) . "</td>";
+                echo "</tr>";
+              }
+              ?>
+            </tbody>
         </table>
       </div>
     </div>
@@ -207,29 +225,43 @@ https://templatemo.com/tm-589-lugx-gaming
       <h2 class="details-title" id="calendar-title">Calendrier des matchs à venir <span class="arrow">&#9660;</span></h2>
       <div class="calendar details" id="calendar-details">
         <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Match</th>
-              <th>Heure</th>
-              <th>Lieu</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>20/04/2024</td>
-              <td>Match 3</td>
-              <td>16:00</td>
-              <td>Salle de billard C</td>
-            </tr>
-            <tr>
-              <td>25/04/2024</td>
-              <td>Match 4</td>
-              <td>19:30</td>
-              <td>Salle de billard D</td>
-            </tr>
-            <!-- Ajoutez d'autres lignes pour plus de matchs à venir -->
-          </tbody>
+        <thead>
+              <tr>
+                <th>Date</th>
+                <th>Match</th>
+                <th>Heure</th>
+                <th>Lieu</th>
+                <th>Region</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+              require '../server/db.php';
+
+              // Requête pour récupérer uniquement les matchs de type 'réunion'
+              $stmt = $pdo->query("SELECT * FROM matches WHERE region = 'la-réunion'");
+              $matches = $stmt->fetchAll(PDO::FETCH_ASSOC);
+              ?>
+              <?php foreach ($matches as $match): ?>
+                <tr>
+                  <td>
+                    <?= htmlspecialchars($match['match_date']); ?>
+                  </td>
+                  <td>
+                    <?= htmlspecialchars($match['match_name']); ?>
+                  </td>
+                  <td>
+                    <?= htmlspecialchars($match['match_time']); ?>
+                  </td>
+                  <td>
+                    <?= htmlspecialchars($match['match_location']); ?>
+                  </td>
+                  <td>
+                    <?= htmlspecialchars($match['region']); ?>
+                  </td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
         </table>
       </div>
     </div>

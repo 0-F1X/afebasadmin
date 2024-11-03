@@ -271,11 +271,11 @@ require_once 'server/trait-two-classement.php';
                                         foreach ($classement_mada as $index => $joueur) {
                                             if ($index < 5) {
                                                 echo "<tr>
-                                <td>" . ($index + 1) . "</td>
-                                <td>" . $joueur['tournoi'] . "</td>
-                                <td>" . $joueur['nom_prenom'] . "</td>
-                                <td>" . $joueur['points'] . "</td>
-                            </tr>";
+                                                <td>" . ($index + 1) . "</td>
+                                                <td>" . $joueur['tournoi'] . "</td>
+                                                <td>" . $joueur['nom_prenom'] . "</td>
+                                                <td>" . $joueur['points'] . "</td>
+                                                </tr>";
                                             }
                                         }
                                         ?>

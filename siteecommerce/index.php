@@ -62,15 +62,6 @@
                 <header class="section-header">
                     <h2>Parcourez les photos , passez vos commandes </h2>
                 </header>
-
-                <div class="search-bar-container">
-                    <div class="search-bar-wrapper">
-                        <input type="text" id="search-bar" class="search-bar" placeholder="Search..." />
-                        <span class="search-icon">
-                            <i class="fas fa-search"></i>
-                        </span>
-                    </div>
-                </div>
             </div>
 
             <?php
