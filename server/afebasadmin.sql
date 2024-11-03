@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2024 at 07:04 PM
+-- Generation Time: Nov 03, 2024 at 02:33 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -42,7 +42,8 @@ CREATE TABLE `classement` (
 INSERT INTO `classement` (`id`, `region`, `tournoi`, `nom_prenom`, `points`) VALUES
 (1, 'madagascar', 'National', 'ANDRIAMPENOMANANA Fiderana', 10),
 (2, 'la-reunion', 'National', 'Mialy Andio', 5),
-(3, 'madagascar', 'National', 'Marco Razafindrakoto', 10);
+(3, 'madagascar', 'National', 'Marco Razafindrakoto', 10),
+(4, 'la-reunion', 'National', 'Mr Bisset', 7);
 
 -- --------------------------------------------------------
 
@@ -140,6 +141,29 @@ INSERT INTO `produits` (`id`, `nom`, `description`, `image`, `prix`) VALUES
 (8, 'Materielles', 'AZAAEKSD Nffsksd', '671fcd9ca7c85_670ff42aa6dbd_13.png', 40000.00),
 (9, 'Vango', 'Azaeaz azrar', '671fce11ef3c1_670ff3456dc69_12.png', 30000.00);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `resultats`
+--
+
+CREATE TABLE `resultats` (
+  `id` int(11) NOT NULL,
+  `date_result` date NOT NULL,
+  `equipe` varchar(255) NOT NULL,
+  `points` varchar(10) NOT NULL,
+  `score` varchar(10) NOT NULL,
+  `region` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `resultats`
+--
+
+INSERT INTO `resultats` (`id`, `date_result`, `equipe`, `points`, `score`, `region`) VALUES
+(1, '2024-10-15', 'National', '10', '12-12', 'madagascar'),
+(2, '2024-10-16', 'National', '20', '12-12', 'la-reunion');
+
 --
 -- Indexes for dumped tables
 --
@@ -181,6 +205,12 @@ ALTER TABLE `produits`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `resultats`
+--
+ALTER TABLE `resultats`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -188,7 +218,7 @@ ALTER TABLE `produits`
 -- AUTO_INCREMENT for table `classement`
 --
 ALTER TABLE `classement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `classement_madagascar`
@@ -219,6 +249,12 @@ ALTER TABLE `matches`
 --
 ALTER TABLE `produits`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `resultats`
+--
+ALTER TABLE `resultats`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

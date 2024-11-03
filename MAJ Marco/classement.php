@@ -13,7 +13,7 @@ require_once '../server/trait-two-classement.php';
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="icon" type="image/png" href="assets/images/434984082_664231352458191_5826590618460124006_n - Copie.png">
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/styles.css">
