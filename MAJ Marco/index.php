@@ -234,19 +234,19 @@ require_once '../server/trait-two-classement.php';
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>10/04/2024</td>
-                <td>Match 1</td>
-                <td>10 - 5</td>
-                <td>3 - 2</td>
-              </tr>
-              <tr>
-                <td>15/04/2024</td>
-                <td>Match 2</td>
-                <td>12 - 8</td>
-                <td>4 - 1</td>
-              </tr>
-              <!-- Ajoutez d'autres lignes pour plus de matchs -->
+              <?php
+              // Récupérer les résultats de la base de données
+              $sql = "SELECT date_result, equipe, points, score, region FROM resultats WHERE region = 'madagascar'";
+              $stmt = $pdo->query($sql);
+              while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($row['date_result']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['equipe']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['points']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['score']) . "</td>";
+                echo "</tr>";
+              }
+              ?>
             </tbody>
           </table>
         </div>
