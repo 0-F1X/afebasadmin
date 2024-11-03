@@ -59,6 +59,13 @@
                     <i class="fas fa-calendar-alt"></i>
                     <span>Calendrier des Matchs</span>
                 </a>
+            </li> 
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="./ecommerce.php">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span> Boutique </span>
+                </a>
             </li>
 
             <li class="nav-item">

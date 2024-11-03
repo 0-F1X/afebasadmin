@@ -66,6 +66,13 @@ require_once 'server/trait-two-classement.php';
             </li>
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="./ecommerce.php">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span> Boutique </span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="./classement.html">
                     <i class="fas fa-trophy"></i>
                     <span>Classement</span>
